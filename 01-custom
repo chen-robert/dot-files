@@ -18,3 +18,5 @@ else
 fi
 
 echo
+/usr/lib/update-notifier/update-motd-reboot-required
+echo

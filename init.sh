@@ -7,7 +7,7 @@ apt-get --assume-yes install screenfetch > /dev/null \
 cp .vimrc ~/.vimrc \
   && echo "Updated .vimrc"
 
-cp .gitconfig ~/.gitconfig \ 
+cp .gitconfig ~/.gitconfig \
   && echo "Updated .gitconfig"
 
 cp .tmux.conf ~/.tmux.conf \
