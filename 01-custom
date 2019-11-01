@@ -19,6 +19,7 @@ else
   echo " System information disabled due to load higher than $threshold" 
 fi
 
-echo
+cat /var/lib/update-notifier/updates-available
+
 /usr/lib/update-notifier/update-motd-reboot-required
 echo
