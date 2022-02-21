@@ -4,12 +4,12 @@ set -e
 
 export DEBIAN_FRONTEND=noninteractive
 
-apt-get update && \
-  apt-get install -qy git curl zsh tmux software-properties-common ripgrep
+sudo apt-get update && \
+  sudo apt-get install -qy git curl zsh tmux software-properties-common ripgrep
 
-add-apt-repository -y ppa:neovim-ppa/stable
-apt-get update
-apt-get install -qy neovim
+sudo add-apt-repository -y ppa:neovim-ppa/stable && \
+  sudo apt-get update && \
+  sudo apt-get install -qy neovim
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
@@ -53,12 +53,12 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 vim +'PlugInstall --sync' +qa
 NVIM_PLUGIN_INSTALLING=true nvim +'PlugInstall --sync' +qa
 
-# tpm
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-~/.tmux/plugins/tpm/bin/install_plugins
-
 # zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --all --no-zsh --no-bash --no-fish
+
+# tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+~/.tmux/plugins/tpm/bin/install_plugins
