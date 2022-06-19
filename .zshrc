@@ -16,7 +16,7 @@ ZSH_THEME="gentoo"
 DISABLE_UPDATE_PROMPT="true"
 
 export NVM_LAZY_LOAD=true
-plugins=(git command-not-found fzf zsh-syntax-highlighting zsh-autosuggestions copydir copyfile zsh-nvm)
+plugins=(git command-not-found fzf zsh-syntax-highlighting zsh-autosuggestions copypath copyfile zsh-nvm)
 
 # zsh-syntax-highlighting
 source $ZSH/oh-my-zsh.sh
@@ -35,3 +35,4 @@ fi
 
 alias nv="nvim"
 alias hidegit="git config --add oh-my-zsh.hide-status 1 && git config --add oh-my-zsh.hide-dirty 1"
+export PATH=/usr/local/smlnj/bin:"$PATH"
